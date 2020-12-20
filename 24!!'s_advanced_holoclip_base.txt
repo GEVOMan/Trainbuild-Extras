@@ -1,0 +1,39 @@
+@name 24!!'s Advanced HoloClip Base
+@inputs E:entity
+@persist E:entity
+
+Editing = 1 #Change this to 1 if you're editing your skin.
+
+Model1 = "" #Put the model path for the locomotive between these quotes.
+
+Color1 = vec(10)
+Color2 = vec(10)
+Color3 = vec(255)
+Color4 = vec(255)
+
+##--------End Config
+
+E:setAlpha(0)
+
+if(first()|dupefinished()){
+
+A = 0
+    holoCreate(A)
+    holoModel(A,Model1)
+    holoPos(A,E:toWorld(vec(0,0,0)))
+    holoAng(A,E:toWorld(ang(0,0,0)))
+    #holoBodygroup(A,0,0)
+    holoColor(A,Color4) 
+    holoParent(A,E)
+    holoMaterial(A,"")
+    #holoEntity(A):setSubMaterial(1,"")
+    holoClipEnabled(A,1,1)
+}
+
+if(Editing){
+    if(A<80|A==80){
+    printColor(vec(0,255,0),"Holo Count = "+(A+1))
+    }elseif(A>80){
+    printColor(vec(255,0,0),"Holo Count = "+(A+1))
+    }
+}
