@@ -2,7 +2,7 @@
 @inputs E:entity
 @persist E:entity
 
-Editing = 0
+Editing = 0 #Change this to one if you're editing your skin.
 
 ##--------Variables
 
